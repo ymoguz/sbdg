@@ -1,0 +1,61 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: url('bg3.jpg') no-repeat center center fixed; /* Set your background image */
+  background-size: cover; /* Ensure it covers the entire page */
+  font-family: Arial, sans-serif;
+}
+
+#puzzle-container {
+  width: 302px;  /* Adjusted for border */
+  height: 302px; /* Adjusted for border */
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* Three columns */
+  grid-template-rows: repeat(3, 100px); /* Three rows */
+  gap: 2px; /* Space between tiles */
+  border: 1px solid #000; /* Visible border around the grid */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Enhanced shadow for depth */
+  padding: 1px; /* Padding to handle border without affecting internal grid alignment */
+}
+
+#puzzle-container div {
+  width: 100px;  /* Each tile is 100px by 100px */
+  height: 100px;
+  background-size: cover;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease-in-out; /* Smooth transition for hover effect */
+  border: 1px solid #ddd; /* Subtle border for each tile for better distinction */
+}
+
+#puzzle-container div:hover {
+  transform: scale(1.05); /* Slightly enlarge tiles on hover */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Subtle shadow on hover for better interaction feedback */
+}
+
+#puzzle-container .empty {
+  visibility: hidden; /* Hide the empty tile */
+  cursor: default; /* No pointer cursor for the empty space */
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 16px;
+  color: white;
+  background-color: #343a40; /* Dark gray */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #23272b; /* Darker shade on hover */
+}
